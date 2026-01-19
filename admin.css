@@ -1,0 +1,141 @@
+/* TWTGR Reviews Tracker – admin.css */
+
+/* ---------- Filtros (BO) ---------- */
+.twtgr-filters{
+  margin:1rem 0;
+  display:flex;
+  gap:1rem;
+  align-items:flex-end;
+  flex-wrap:wrap; /* quebra para linhas em ecrãs estreitos */
+}
+.twtgr-filters label{
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  font-size:13px;
+}
+.twtgr-filters input[type="date"],
+.twtgr-filters select{
+  min-width:200px;
+  max-width:100%;
+}
+.twtgr-filters .button{
+  height:32px;
+  line-height:30px;
+  padding:0 12px;
+}
+
+/* Mobile-friendly */
+@media (max-width: 782px){ /* breakpoint do WP admin */
+  .twtgr-filters{
+    gap:.75rem;
+  }
+  .twtgr-filters input[type="date"],
+  .twtgr-filters select{
+    min-width:160px;
+  }
+}
+
+/* ---------- Placeholder de aviso no BO ---------- */
+.twtgr-ph{
+  padding:12px;
+  border:1px dashed #c3c4c7;
+  border-radius:8px;
+  color:#50575e;
+  background:#f6f7f7;
+  font-size:13px;
+}
+
+/* ---------- Botões de export ---------- */
+.twtgr-export-buttons{
+  margin:.75rem 0 1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+.twtgr-export-buttons .button{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+}
+.twtgr-export-buttons .button:focus{
+  outline:2px solid #2271b1;
+  outline-offset:2px;
+}
+
+/* ---------- Wrapper & scroll ---------- */
+.twtgr-report{
+  overflow-x:auto;                 /* scroll horizontal quando necessário */
+  -webkit-overflow-scrolling:touch;
+}
+
+/* ---------- Tabelas ---------- */
+.twtgr-report .widefat{
+  border-radius:6px;
+  overflow:hidden;
+  /* cria contexto para header sticky */
+  position:relative;
+}
+
+/* Cabeçalho sticky para tabelas longas */
+.twtgr-report .widefat thead th{
+  position:sticky;
+  top:0;
+  background:#f6f7f7;
+  z-index:1;
+  white-space:nowrap;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
+}
+
+.twtgr-report .widefat td,
+.twtgr-report .widefat th{
+  vertical-align:middle;
+  font-size:13px;
+}
+
+/* Colunas comuns com largura mínima útil */
+.twtgr-report .widefat td:nth-child(1),
+.twtgr-report .widefat th:nth-child(1){ /* Data/Hora */
+  white-space:nowrap;
+  min-width:140px;
+}
+
+.twtgr-report .widefat td a{
+  text-decoration:none;
+}
+.twtgr-report .widefat td a:hover,
+.twtgr-report .widefat td a:focus{
+  text-decoration:underline;
+}
+
+/* Linha vazia “Sem dados.” centrada */
+.twtgr-report .widefat td[colspan]{
+  text-align:center;
+  color:#6b7280;
+}
+
+/* Pequenas “row actions” (se/ quando existirem) */
+.twtgr-row-actions{
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  font-size:12px;
+}
+.twtgr-row-actions a{
+  color:#2271b1;
+  text-decoration:none;
+}
+.twtgr-row-actions a:hover,
+.twtgr-row-actions a:focus{
+  text-decoration:underline;
+}
+
+/* ---------- Utilidades ---------- */
+.twtgr-hide{
+  display:none !important;
+}
+
+/* ---------- Acessibilidade / redução de movimento ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; animation:none !important; }
+}
